@@ -11,6 +11,7 @@ import java.util.LinkedHashSet;
 import java.util.Set;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Comparator;
 
 public class V5LinkedHashSet {
     private static Set<Letter> letters = new LinkedHashSet<>();
@@ -38,7 +39,8 @@ public class V5LinkedHashSet {
         System.out.println("Все письма с сортировкой по дате получения: ");
         // реализуйте этот метод
         List<Letter> arr= new ArrayList<>(letters);
-        arr.sort(null);
+        Letter comparator = new Letter();
+        arr.sort(comparator);
         for(Letter name: arr){
             System.out.println("name: " + name.authorName + name.dateReceived);
         }
