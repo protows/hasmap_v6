@@ -1,8 +1,25 @@
 package lesson_8.hash7;
 import java.time.LocalDate;
+import java.util.Comparator;
 import java.util.Objects;
 
-public class Letter  implements Comparable<Letter>{
+public class Letter implements Comparator<LocalDate> { 
+
+@Override
+public int compare(LocalDate dateReceived) {   
+     return this.dateReceived.compareTo(a.dateReceived);
+   
+}
+    
+    public String authorName;      // имя отправителя
+    public LocalDate dateReceived; // дата получения письма
+    public String text;            // текст письма
+
+    public Letter(String senderName, LocalDate dateReceived, String text) {
+        this.authorName = senderName;
+        this.dateReceived = dateReceived;
+        this.text = text;
+    }
 
     @Override
     public int hashCode() {
@@ -33,21 +50,5 @@ public class Letter  implements Comparable<Letter>{
         }
         return Objects.equals(this.dateReceived, other.dateReceived);
     }
-    public String authorName;      // имя отправителя
-    public LocalDate dateReceived; // дата получения письма
-    public String text;            // текст письма
-
-    public Letter(String senderName, LocalDate dateReceived, String text) {
-        this.authorName = senderName;
-        this.dateReceived = dateReceived;
-        this.text = text;
-    }
-    
-     @Override
-    public int compareTo(Letter a){
-        //return Integer.compare(this.dateReceived, a.dateReceived);
-        return this.dateReceived.compareTo(a.dateReceived);
-    }
-    
-
+   
 }
