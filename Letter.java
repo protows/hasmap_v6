@@ -3,13 +3,7 @@ import java.time.LocalDate;
 import java.util.Comparator;
 import java.util.Objects;
 
-public class Letter implements Comparator<LocalDate> { 
-
-@Override
-public int compare(LocalDate dateReceived) {   
-     return this.dateReceived.compareTo(a.dateReceived);
-   
-}
+public class Letter { 
     
     public String authorName;      // имя отправителя
     public LocalDate dateReceived; // дата получения письма
