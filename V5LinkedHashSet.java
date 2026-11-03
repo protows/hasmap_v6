@@ -39,7 +39,7 @@ public class V5LinkedHashSet {
         System.out.println("Все письма с сортировкой по дате получения: ");
         // реализуйте этот метод
         List<Letter> arr= new ArrayList<>(letters);
-        Letter comparator = new Letter();
+        LetterDateComparator comparator = new LetterDateComparator();
         arr.sort(comparator);
         for(Letter name: arr){
             System.out.println("name: " + name.authorName + name.dateReceived);
