@@ -12,6 +12,9 @@ import java.util.Set;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Comparator;
+import java.util.TreeSet;
+import java.util.Set;
+
 
 public class V5LinkedHashSet {
     private static Set<Letter> letters = new LinkedHashSet<>();
@@ -37,12 +40,13 @@ public class V5LinkedHashSet {
 
     private static void printOrderedByDateReceived(Set<Letter> letters) {
         System.out.println("Все письма с сортировкой по дате получения: ");
-        // реализуйте этот метод
-        List<Letter> arr= new ArrayList<>(letters);
-        LetterDateComparator comparator = new LetterDateComparator();
-        arr.sort(comparator);
-        for(Letter name: arr){
-            System.out.println("name: " + name.authorName + name.dateReceived);
-        }
+        
+        Set<Letter> sortedLetters = new TreeSet<>(new LetterDateComparator());
+            sortedLetters.addAll(letters);
+         for (Letter letter : sortedLetters) {
+        System.out.println("    * Письмо от " + letter.authorName + " поступило " + letter.dateReceived);
+    }   
+            
+     
     }
 }
